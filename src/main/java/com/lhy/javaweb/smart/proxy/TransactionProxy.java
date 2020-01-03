@@ -14,12 +14,12 @@ import java.lang.reflect.Method;
 @Slf4j
 public class TransactionProxy implements Proxy{
 
-    private static final ThreadLocal<Boolean> FLAG_HOLDER = new ThreadLocal<>(){
+    private static final ThreadLocal<Boolean> FLAG_HOLDER = new ThreadLocal<Boolean>(){
         @Override
         protected  Boolean initialValue() {
             return false;
         }
-    }
+    };
     @Override
     public Object doProxy(ProxyChain proxyChain) throws Throwable {
         Object result = null;
